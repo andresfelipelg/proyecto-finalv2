@@ -1,0 +1,9 @@
+body{
+    background-color: white;
+}
+
+.table-encabezado{
+    background: rgb(34,193,195);
+background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(21,221,218,1) 0%);
+
+}

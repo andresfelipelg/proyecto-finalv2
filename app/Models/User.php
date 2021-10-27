@@ -25,7 +25,7 @@ class User extends Authenticatable
         'celular',
         'direccion',
         'email',
-        'rol_id',
+        'id_role',
         'password',
     ];
 
@@ -47,4 +47,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /* relacion para ver el nombre del rol del usuario*/
+    public function rol(){
+        return $this->belongsTo(Role::class, 'id_role');
+    }
 }

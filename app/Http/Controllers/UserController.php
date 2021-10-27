@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\User;
+use App\Models\Role;
 
 use Illuminate\Http\Request;
 
@@ -14,7 +15,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        $usuarios = User::get();
+        //$usuarios = User::get();
+        $usuarios = User::all();
 
         return view('usuarios.index',[
             'usuarios' => $usuarios
@@ -35,7 +37,10 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('usuarios.create');
+        $roles=Role::get();
+        return view('usuarios.create',[
+            'roles'=> $roles
+        ]);
     }
 
     /**
@@ -54,7 +59,7 @@ class UserController extends Controller
         $usuario->celular = $request->celular;
         $usuario->direccion = $request->direccion;
         $usuario->email = $request->email;
-        $usuario->id_role = $request->rol_id;
+        $usuario->id_role = $request->id_role;
         $usuario->password = $request->password;
         $usuario->save();
 

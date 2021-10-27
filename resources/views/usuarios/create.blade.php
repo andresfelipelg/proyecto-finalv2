@@ -42,11 +42,13 @@
                     <input class="form-control" type="text"  name="direccion" placeholder="Direccion">
                   </div>
                   <div class="mb-3 mt-3 text-start">
-                    <select class="form-select" aria-label="Default select example" name="rol_id" id="rol_id">
+                    <select class="form-select" aria-label="Default select example" name="id_role" id="id_role">
                         <option value="">Seleccione el rol del usuario</option>
-                        <option value="1">Administrador</option>
-                         <option value="2">Usuario</option>
+                        @foreach($roles as $role)
+                          <option value="{{ $role->id }}">{{ $role->nom_rol }}</option>
+                        @endforeach
                     </select>
+
                     @if ($errors->has('rol_id'))
                         <p class="text-danger">{{ $errors->first('rol_id') }}</p>
                     @endif

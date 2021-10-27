@@ -17,6 +17,7 @@
         <thead class="table-encabezado text-white">
             <tr>
                 <th scope="col">ID</th>
+                <th scope="col">Rol</th>
                 <th scope="col">Nombre</th>
                 <th scope="col">Apellido</th>
                 <th scope="col">Cedula</th>
@@ -33,6 +34,7 @@
    
             <tr>
                 <td>{{ $usuario-> id}} </td>
+                <td>{{ $usuario-> rol->nom_rol}} </td>
                 <td>{{ $usuario-> nombre}} </td>
                 <td>{{ $usuario-> apellido}} </td>
                 <td>{{ $usuario-> cedula}} </td>

@@ -18,7 +18,7 @@
     
       <div class="col-3 pt-5 m-auto ">
       <div class="text-center mt-5 ">
-      <form  action="">
+      <form  action="{{ route('usuarios.login') }}">
           <i class=" display-1  bi bi-person-circle"></i>
           <h1 class= "mt-4 h2 font-weight-normal text-white" >Login</h1>
 

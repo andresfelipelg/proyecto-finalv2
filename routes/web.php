@@ -15,7 +15,7 @@ use App\Http\Controllers\UserController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('usuarios.login');
 });
 
 
@@ -32,3 +32,7 @@ Route::delete('/ususrios/delete{id}', [UserController::class, 'delete'])->name('
 
 
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

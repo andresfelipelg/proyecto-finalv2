@@ -8,7 +8,7 @@
 
 @section('contenido')
 
-    <form action="{{ route('usuarios.store') }}" method="POST">
+    <form action="{{ route('register.custom') }}" method="POST">
         @csrf
         <div class="row">
 
@@ -57,7 +57,7 @@
                     <input class="form-control" type="email"  name="email" placeholder="email">
                   </div>
                   <div class="mb-3  text-start">
-                    <input class="form-control" type="text"  name="password" placeholder="Password">
+                    <input class="form-control" type="password"  name="password" placeholder="Password">
                   </div>
                 <div class="d-grid ">
                 <button class="mt-2 btn btn-dark" type="submit">Enviar</button> 

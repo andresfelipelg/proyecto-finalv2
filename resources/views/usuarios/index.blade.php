@@ -11,10 +11,10 @@
 
 
 
-    <a href="{{ route('usuarios.create') }}" class="btn btn-secondary mt-3 mb-3">Crear Usuario <i class="bi bi-person-plus-fill"></i></a>
+    <a href="{{ route('register-user') }}" class="btn btn-secondary mt-3 mb-3">Crear Usuario <i class="bi bi-person-plus-fill"></i></a>
 
     <table class="table  table-striped table-hover mt-5 table-bordered shadow-lg" id="usuarios">
-        <thead class="table-encabezado text-white">
+        <thead class="table-encabezado text-dark">
             <tr>
                 <th scope="col">ID</th>
                 <th scope="col">Rol</th>

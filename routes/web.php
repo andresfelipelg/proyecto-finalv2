@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\CustomRegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,3 +33,11 @@ Route::delete('/ususrios/delete{id}', [UserController::class, 'delete'])->name('
 
 
 
+
+Auth::routes(['register'=> false]);
+
+//custom register
+Route::get('registration', [CustomRegisterController::class, 'registration'])->name('register-user');
+Route::post('custom-registration', [CustomRegisterController::class, 'customRegistration'])->name('register.custom');
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

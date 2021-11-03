@@ -54,7 +54,7 @@
                             @endif
                         @else
 
-                            @if (auth()->user()->id_role == 1 || 2)
+                            @if (auth()->user()->id_role == 1)
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('usuarios.index') }}">lista Usuarios</a>
                                 </li>

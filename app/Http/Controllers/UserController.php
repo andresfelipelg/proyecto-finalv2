@@ -95,9 +95,13 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        $articulo = Articulo::find($id);
+        $user = User::find($id);
+        $roles = Role::all();
 
-        return view('usuarios.edit')->with('usuario',$usuario);
+        return view('usuarios.edit',[
+            'user'=>$user,
+            'roles'=>$roles,
+        ]);
     }
 
     /**
@@ -109,7 +113,9 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+          $user= User::find($id);
+          $user->update($request->all());
+          return redirect('usuarios');
     }
 
     /**

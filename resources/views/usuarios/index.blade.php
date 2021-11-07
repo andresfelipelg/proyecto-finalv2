@@ -47,7 +47,7 @@
                 <form action="" method="post">
                     @csrf
                     @method('DELETE')
-                       <a href="/usuarios/{{ $usuario->id }}/edit" class="btn btn-secondary">Editar</a>
+                       <a href="{{route('usuarios.edit', $usuario->id)}}" class="btn btn-secondary">Editar</a>
                    <button href=""class="btn btn-dark" type="submit" >Borrar</button>
                </form>
                </td>

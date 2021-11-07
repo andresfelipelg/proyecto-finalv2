@@ -27,8 +27,9 @@ Route::get('/usuarios', [UserController::class, 'index'])->name('usuarios.index'
 Route::get('/usuarios/login', [UserController::class, 'login'])->name('usuarios.login');
 Route::get('/usuarios/create', [UserController::class, 'create'])->name('usuarios.create');
 Route::post('/usuarios/store', [UserController::class, 'store'])->name('usuarios.store');
-Route::put('/usuarios/edit{id}', [UserController::class, 'edit'])->name('usuarios.edit');
-Route::delete('/ususrios/delete{id}', [UserController::class, 'delete'])->name('usuarios.delete');
+Route::get('/usuarios/edit/{id}', [UserController::class, 'edit'])->name('usuarios.edit');
+Route::put('/usuarios/update/{id}', [UserController::class, 'update'])->name('usuarios.update');
+Route::delete('/ususrios/delete/{id}', [UserController::class, 'delete'])->name('usuarios.delete');
 
 
 

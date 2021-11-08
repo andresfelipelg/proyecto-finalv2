@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CustomRegisterController;
+use App\Http\Controllers\Documentacion\EncargadosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,6 +31,14 @@ Route::post('/usuarios/store', [UserController::class, 'store'])->name('usuarios
 Route::get('/usuarios/edit/{id}', [UserController::class, 'edit'])->name('usuarios.edit');
 Route::put('/usuarios/update/{id}', [UserController::class, 'update'])->name('usuarios.update');
 Route::delete('/ususrios/delete/{id}', [UserController::class, 'delete'])->name('usuarios.delete');
+
+//Documentacion CRUD encargados
+
+Route::get('/encargados', [EncargadosController::class, 'index'])->name('encargados.index');
+Route::get('/encargados/create', [EncargadosController::class, 'create'])->name('encargados.create');
+Route::post('/encargados/store', [EncargadosController::class, 'store'])->name('encargados.store');
+
+
 
 
 

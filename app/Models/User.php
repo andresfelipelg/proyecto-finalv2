@@ -27,6 +27,7 @@ class User extends Authenticatable
         'email',
         'id_role',
         'password',
+        'status',
     ];
 
     /**
@@ -51,5 +52,9 @@ class User extends Authenticatable
     /* relacion para ver el nombre del rol del usuario*/
     public function rol(){
         return $this->belongsTo(Role::class, 'id_role');
+    }
+
+    public function getStatus(){
+        return $this->belongsTo(Status::class, 'status_id');
     }
 }

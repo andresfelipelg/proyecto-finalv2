@@ -17,7 +17,7 @@ use App\Http\Controllers\Documentacion\EncargadosController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 
@@ -31,6 +31,11 @@ Route::post('/usuarios/store', [UserController::class, 'store'])->name('usuarios
 Route::get('/usuarios/edit/{id}', [UserController::class, 'edit'])->name('usuarios.edit');
 Route::put('/usuarios/update/{id}', [UserController::class, 'update'])->name('usuarios.update');
 Route::delete('/ususrios/delete/{id}', [UserController::class, 'delete'])->name('usuarios.delete');
+
+//cambiar estado al usuario
+Route::get('/usuarios/status_edit/{id}', [UserController::class, 'status_edit'])->name('usuarios.status_edit');
+Route::put('/usuarios/status_update/{id}', [UserController::class, 'status_update'])->name('usuarios.status_update');
+
 
 //Documentacion CRUD encargados
 
@@ -50,4 +55,4 @@ Auth::routes(['register'=> false]);
 Route::get('registration', [CustomRegisterController::class, 'registration'])->name('register-user');
 Route::post('custom-registration', [CustomRegisterController::class, 'customRegistration'])->name('register.custom');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('status:2');

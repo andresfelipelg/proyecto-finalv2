@@ -7,6 +7,13 @@
 @endsection
 
 @section('content')
+
+    @if (session()->has('message'))
+        <div class="alert alert-danger">
+            {{ session()->get('message') }}
+        </div>
+    @endif
+    
  <form  method= "POST" action="{{ route('login') }}">
      @csrf
      <section class="form-login">

@@ -18,6 +18,7 @@
             <tr>
                 <th scope="col">ID</th>
                 <th scope="col">Rol</th>
+                <th scope="col">Estado</th>
                 <th scope="col">Nombre</th>
                 <th scope="col">Apellido</th>
                 <th scope="col">Cedula</th>
@@ -35,6 +36,7 @@
             <tr>
                 <td>{{ $usuario-> id}} </td>
                 <td>{{ $usuario-> rol->nom_rol}} </td>
+                <td>{{ $usuario-> getStatus->tipo}} </td>
                 <td>{{ $usuario-> nombre}} </td>
                 <td>{{ $usuario-> apellido}} </td>
                 <td>{{ $usuario-> cedula}} </td>
@@ -48,7 +50,8 @@
                     @csrf
                     @method('DELETE')
                        <a href="{{route('usuarios.edit', $usuario->id)}}" class="btn btn-secondary">Editar</a>
-                   <button href=""class="btn btn-dark" type="submit" >Borrar</button>
+                       <a href="{{route('usuarios.status_edit', $usuario->id)}}" class="btn btn-danger">Activar/desactivar</a>
+                   <!--<button href=""class="btn btn-dark" type="submit" >Borrar</button>-->
                </form>
                </td>
             </tr>

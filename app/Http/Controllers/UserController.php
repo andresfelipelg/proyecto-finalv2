@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Role;
+use App\Models\Status;
 
 use Illuminate\Http\Request;
 
@@ -22,10 +23,12 @@ class UserController extends Controller
     public function index()
     {
         //$usuarios = User::get();
+        
         $usuarios = User::all();
 
         return view('usuarios.index',[
-            'usuarios' => $usuarios
+            'usuarios' => $usuarios,
+            
 
         ]);
     }
@@ -127,5 +130,26 @@ class UserController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    //funciones para modificar el estado de un usuario
+
+    public function status_edit($id)
+    {
+          $user= User::find($id);
+          $status=Status::all();
+          
+          return view('usuarios.status',[
+              'user'=> $user,
+              'status'=>$status
+          ]);
+    }
+
+    public function status_update(Request $request, $id){
+
+        $user=User::find($id);
+        $user->status_id= $request->status_id;
+        $user->save();
+        return redirect('usuarios');
     }
 }

@@ -16,7 +16,10 @@ class EncargadosController extends Controller
      */
     public function index()
     {
-        //
+        $encargados=Encargado::all();
+        return view('documentacion.encargados.index',[
+            'encargados'=> $encargados,
+        ]);
     }
 
     /**
@@ -89,6 +92,7 @@ class EncargadosController extends Controller
     
 
         $encargado->save();
+        return redirect('/encargados');
 
         
 

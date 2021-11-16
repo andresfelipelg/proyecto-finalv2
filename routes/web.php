@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CustomRegisterController;
 use App\Http\Controllers\Documentacion\EncargadosController;
+use App\Http\Controllers\Documentacion\EmpresasController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,6 +43,14 @@ Route::put('/usuarios/status_update/{id}', [UserController::class, 'status_updat
 Route::get('/encargados', [EncargadosController::class, 'index'])->name('encargados.index');
 Route::get('/encargados/create', [EncargadosController::class, 'create'])->name('encargados.create');
 Route::post('/encargados/store', [EncargadosController::class, 'store'])->name('encargados.store');
+
+//Dcumentacion CRUD empresas
+
+Route::get('/empresas', [EmpresasController::class, 'index'])->name('empresas.index');
+Route::get('/empresas/create', [EmpresasController::class, 'create'])->name('empresas.create');
+Route::post('/empresas/store', [EmpresasController::class, 'store'])->name('empresas.store');
+Route::get('/empresas/edit/{id}', [EmpresasController::class, 'edit'])->name('empresas.edit');
+Route::put('/empresas/update/{id}', [EmpresasController::class, 'update'])->name('empresas.update');
 
 
 

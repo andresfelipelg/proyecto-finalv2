@@ -5,6 +5,9 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\CustomRegisterController;
 use App\Http\Controllers\Documentacion\EncargadosController;
 use App\Http\Controllers\Documentacion\EmpresasController;
+use App\Http\Controllers\Documentacion\ProveedoresController;
+use App\Http\Controllers\Documentacion\Planes_emergenciasController;
+use App\Http\Controllers\Documentacion\Riesgos_psicosocialesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -52,7 +55,21 @@ Route::post('/empresas/store', [EmpresasController::class, 'store'])->name('empr
 Route::get('/empresas/edit/{id}', [EmpresasController::class, 'edit'])->name('empresas.edit');
 Route::put('/empresas/update/{id}', [EmpresasController::class, 'update'])->name('empresas.update');
 
+//Documentacion CRUD proveedores
 
+Route::get('/proveedores', [ProveedoresController::class, 'index'])->name('proveedores.index');
+Route::get('/proveedores/create', [ProveedoresController::class, 'create'])->name('proveedores.create');
+Route::post('/proveedores/store', [ProveedoresController::class, 'store'])->name('proveedores.store');
+
+//Documentacion CRUD planes_emergencias
+Route::get('/planes_emergencias', [Planes_emergenciasController::class, 'index'])->name('planes.index');
+Route::get('/planes_emergencias/create', [Planes_emergenciasController::class, 'create'])->name('planes.create');
+Route::post('/planes_emergencias/store', [Planes_emergenciasController::class, 'store'])->name('planes.store');
+
+//Documentacion CRUD riesgos_psicosociales
+Route::get('/riesgos_psicosociales', [Riesgos_psicosocialesController::class, 'index'])->name('riesgos.index');
+Route::get('/riesgos_psicosociales/create', [Riesgos_psicosocialesController::class, 'create'])->name('riesgos.create');
+Route::post('/riesgos_psicosociales/store', [Riesgos_psicosocialesController::class, 'store'])->name('riesgos.store');
 
 
 

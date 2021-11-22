@@ -8,6 +8,7 @@ use App\Http\Controllers\Documentacion\EmpresasController;
 use App\Http\Controllers\Documentacion\ProveedoresController;
 use App\Http\Controllers\Documentacion\Planes_emergenciasController;
 use App\Http\Controllers\Documentacion\Riesgos_psicosocialesController;
+use App\Http\Controllers\Documentacion\CompromisosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -71,7 +72,13 @@ Route::get('/riesgos_psicosociales', [Riesgos_psicosocialesController::class, 'i
 Route::get('/riesgos_psicosociales/create', [Riesgos_psicosocialesController::class, 'create'])->name('riesgos.create');
 Route::post('/riesgos_psicosociales/store', [Riesgos_psicosocialesController::class, 'store'])->name('riesgos.store');
 
+//Documentacion CRUD compromisos
 
+Route::get('/compromisos', [CompromisosController::class, 'index'])->name('compromisos.index');
+Route::get('/compromisos/create', [CompromisosController::class, 'create'])->name('compromisos.create');
+Route::post('/compromisos/store', [CompromisosController::class, 'store'])->name('compromisos.store');
+Route::get('/compromisos/edit/{id}', [CompromisosController::class, 'edit'])->name('compromisos.edit');
+Route::put('/compromisos/update/{id}', [CompromisosController::class, 'update'])->name('compromisos.update');
 
 
 

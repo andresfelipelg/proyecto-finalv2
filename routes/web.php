@@ -9,6 +9,8 @@ use App\Http\Controllers\Documentacion\ProveedoresController;
 use App\Http\Controllers\Documentacion\Planes_emergenciasController;
 use App\Http\Controllers\Documentacion\Riesgos_psicosocialesController;
 use App\Http\Controllers\Documentacion\CompromisosController;
+use App\Http\Controllers\Documentacion\PoliticaController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -79,6 +81,14 @@ Route::get('/compromisos/create', [CompromisosController::class, 'create'])->nam
 Route::post('/compromisos/store', [CompromisosController::class, 'store'])->name('compromisos.store');
 Route::get('/compromisos/edit/{id}', [CompromisosController::class, 'edit'])->name('compromisos.edit');
 Route::put('/compromisos/update/{id}', [CompromisosController::class, 'update'])->name('compromisos.update');
+
+// Documentacion CRUD Politicas
+
+Route::get('/politicas',[PoliticaController::class,'index'])->name('potlitcas.index');
+Route::get('/politicas/create',[PoliticaController::class,'create'])->name('potlitcas.create');
+Route::post('/politicas/store',[PoliticaController::class,'store'])->name('potlitcas.store');
+Route::get('/politicas/edit/{id}',[PoliticaController::class,'edit'])->name('potlitcas.edit');
+Route::put('/politicas/update/{id}',[PoliticaController::class,'update'])->name('potlitcas.update');
 
 
 

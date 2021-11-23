@@ -10,10 +10,10 @@ use Illuminate\Http\Request;
 class UserController extends Controller
 {
 
-    public function __Construct(){
-        $this->middleware('auth');
+    // public function __Construct(){
+    //     $this->middleware('auth');
         
-    }
+    // }
 
     /**
      * Display a listing of the resource.

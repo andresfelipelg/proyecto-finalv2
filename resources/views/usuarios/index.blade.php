@@ -35,8 +35,8 @@
    
             <tr>
                 <td>{{ $usuario-> id}} </td>
-                <td>{{ $usuario-> rol->nom_rol}} </td>
-                <td>{{ $usuario-> getStatus->tipo}} </td>
+                {{-- <td>{{ $usuario-> rol->nom_rol}} </td> --}}
+                {{-- <td>$usuario->getStatus->tipo </td>--}} 
                 <td>{{ $usuario-> nombre}} </td>
                 <td>{{ $usuario-> apellido}} </td>
                 <td>{{ $usuario-> cedula}} </td>

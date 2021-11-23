@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Documentacion;
 
 use App\Http\Controllers\Controller;
+use App\Models\Politica;
 use Illuminate\Http\Request;
 
 class PoliticaController extends Controller
@@ -14,7 +15,10 @@ class PoliticaController extends Controller
      */
     public function index()
     {
-        //
+        $politicas=Politica::all();
+        return view('documentacion.politicas.index',[
+            'politicas'=> $politicas,
+        ]);
     }
 
     /**

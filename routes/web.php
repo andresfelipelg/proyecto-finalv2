@@ -9,13 +9,10 @@ use App\Http\Controllers\Documentacion\ProveedoresController;
 use App\Http\Controllers\Documentacion\Planes_emergenciasController;
 use App\Http\Controllers\Documentacion\Riesgos_psicosocialesController;
 use App\Http\Controllers\Documentacion\CompromisosController;
-<<<<<<< HEAD
 use App\Http\Controllers\Comites\ActasController;
 use App\Http\Controllers\Comites\ParticipantesController;
-=======
 use App\Http\Controllers\Documentacion\PoliticaController;
-use Illuminate\Support\Facades\Auth;
->>>>>>> 17581e24e1d336001921c261e89e187aebc4aa41
+//use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------

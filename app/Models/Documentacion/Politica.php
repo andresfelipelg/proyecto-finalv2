@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Documentacion\Empresa;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -24,6 +25,9 @@ class Politica extends Model
 
     ];
 
+    public function getEmpresa(){
+        return $this->belongsTo(Empresa::class , 'empresa_id');
+    }
 
 
 }

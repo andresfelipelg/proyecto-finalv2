@@ -9,6 +9,8 @@ use App\Http\Controllers\Documentacion\ProveedoresController;
 use App\Http\Controllers\Documentacion\Planes_emergenciasController;
 use App\Http\Controllers\Documentacion\Riesgos_psicosocialesController;
 use App\Http\Controllers\Documentacion\CompromisosController;
+use App\Http\Controllers\Comites\ActasController;
+use App\Http\Controllers\Comites\ParticipantesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -81,6 +83,22 @@ Route::get('/compromisos/edit/{id}', [CompromisosController::class, 'edit'])->na
 Route::put('/compromisos/update/{id}', [CompromisosController::class, 'update'])->name('compromisos.update');
 
 
+
+//Comites CRUD Actas
+
+Route::get('/actas', [ActasController::class, 'index'])->name('actas.index');
+Route::get('/actas/create', [ActasController::class, 'create'])->name('actas.create');
+Route::post('/actas/store', [ActasController::class, 'store'])->name('actas.store');
+Route::get('/actas/edit/{id}', [ActasController::class, 'edit'])->name('actas.edit');
+Route::put('/actas/update/{id}', [ActasController::class, 'update'])->name('actas.update');
+
+
+//Comites CRUD Participantes
+Route::get('/participantes', [ParticipantesController::class, 'index'])->name('participantes.index');
+Route::get('/participantes/create', [ParticipantesController::class, 'create'])->name('participantes.create');
+Route::post('/participantes/store', [ParticipantesController::class, 'store'])->name('participantes.store');
+Route::get('/participantes/edit/{id}', [ParticipantesController::class, 'edit'])->name('participantes.edit');
+Route::put('/participantes/update/{id}', [ParticipantesController::class, 'update'])->name('participantes.update');
 
 Auth::routes(['register'=> false]);
 

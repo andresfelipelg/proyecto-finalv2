@@ -60,7 +60,7 @@
                 <form action="" method="post">
                     @csrf
                     @method('DELETE')
-                       <a href="" class="btn btn-secondary">Editar</a>
+                       <a href="{{ route('proveedores.edit', $proveedor->id) }}" class="btn btn-secondary">Editar</a>
                        <a href="" class="btn btn-danger">Borrar</a>
                    <!--<button href=""class="btn btn-dark" type="submit" >Borrar</button>-->
                </form>

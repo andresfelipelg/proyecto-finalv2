@@ -37,7 +37,12 @@
                 <td>{{ $participante-> acta_id}} </td>
                 <td>{{ $participante-> cargo_id}} </td>
                 <td>{{ $participante-> nom_usuario}} </td>
-                <td>{{ $participante-> firma}} </td>
+                <td><a href="participantesFirma/{{$participante->firma}}" 
+                             target="popup" 
+                             onclick="window.open('participantesFirma/{{$participante->firma}}','popup','width=600,height=600'); return false;">
+                              Ver firma
+                      </a>
+                </td>
                 
                 
                 
@@ -49,7 +54,7 @@
                 <form action="" method="post">
                     @csrf
                     @method('DELETE')
-                       <a href="" class="btn btn-secondary">Editar</a>
+                       <a href="{{route('participantes.edit', $participante->id)}}" class="btn btn-secondary">Editar</a>
                        <a href="" class="btn btn-danger">Borrar</a>
                    <!--<button href=""class="btn btn-dark" type="submit" >Borrar</button>-->
                </form>

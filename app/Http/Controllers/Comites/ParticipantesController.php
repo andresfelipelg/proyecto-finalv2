@@ -57,9 +57,19 @@ class ParticipantesController extends Controller
         $participante->acta_id= $request->acta_id;
         $participante->cargo_id= $request->cargo_id;
         $participante->nom_usuario= $request->nom_usuario;
-        $participante->firma= $request->firma;
+       
+        if($request->hasFile("firma")){
+            $file= $request->file("firma");
+
+            $nombre="firma_" . time() ."." .$file->guessExtension();
+
+            $ruta= public_path("participantesFirma/".$nombre);
+            copy($file,$ruta);
+            $participante->firma=$nombre;
+        }
 
         $participante->save();
+        return redirect('/participantes');
         
     }
 
@@ -82,7 +92,16 @@ class ParticipantesController extends Controller
      */
     public function edit($id)
     {
-        return view('comites.participantes.edit');
+        $users=User::get();
+        $actas=Acta::get();
+        $cargos=Cargo::get();
+        $participante=Participante::find($id);
+        return view('comites.participantes.edit',[
+            'participante'=> $participante,
+            'users'=> $users,
+            'actas'=> $actas,
+            'cargos'=> $cargos,
+        ]);
     }
 
     /**
@@ -94,7 +113,25 @@ class ParticipantesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $participante=Participante::find($id);
+        $participante->user_id= $request->user_id;
+        $participante->acta_id= $request->acta_id;
+        $participante->cargo_id= $request->cargo_id;
+        $participante->nom_usuario= $request->nom_usuario;
+       
+        if($request->hasFile("firma")){
+            $file= $request->file("firma");
+
+            $nombre="firma_" . time() ."." .$file->guessExtension();
+
+            $ruta= public_path("participantesFirma/".$nombre);
+            copy($file,$ruta);
+            $participante->firma=$nombre;
+        }
+
+        $participante->save();
+        return redirect('/participantes');
+        
     }
 
     /**

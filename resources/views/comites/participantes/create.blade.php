@@ -8,7 +8,7 @@
 
 @section('contenido')
 
-    <form action="{{ route('participantes.store') }}" method="POST">
+    <form action="{{ route('participantes.store') }}" method="POST" enctype= "multipart/form-data">
         @csrf
         <div class="row">
 
@@ -51,12 +51,12 @@
                 @endif 
                 </div>
 
-                <div class="mb-3 mt-3 text-start">
-                    <input class="form-control" type="text" name="firma" placeholder="firma">
-                    @if ($errors->has('apellido'))
-                    <p class="text-danger">{{ $errors->first('apellido') }}</p>
-                @endif 
                 </div>
+                  <div class="mb-3  text-start">
+                    <!--<input class="form-control" type="text"  name="ruta_certiSalud" placeholder="subir certificado de salud">-->
+                    <label for="firma" class="form-label">subir firma del participante</label>
+                    <input type="file" name="firma">
+                  </div>
 
                 
                   

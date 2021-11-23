@@ -51,6 +51,8 @@ Route::put('/usuarios/status_update/{id}', [UserController::class, 'status_updat
 Route::get('/encargados', [EncargadosController::class, 'index'])->name('encargados.index');
 Route::get('/encargados/create', [EncargadosController::class, 'create'])->name('encargados.create');
 Route::post('/encargados/store', [EncargadosController::class, 'store'])->name('encargados.store');
+Route::get('/encargados/edit/{id}', [EncargadosController::class, 'edit'])->name('encargados.edit');
+Route::put('/encargados/update/{id}', [EncargadosController::class, 'update'])->name('encargados.update');
 
 //Dcumentacion CRUD empresas
 
@@ -65,6 +67,8 @@ Route::put('/empresas/update/{id}', [EmpresasController::class, 'update'])->name
 Route::get('/proveedores', [ProveedoresController::class, 'index'])->name('proveedores.index');
 Route::get('/proveedores/create', [ProveedoresController::class, 'create'])->name('proveedores.create');
 Route::post('/proveedores/store', [ProveedoresController::class, 'store'])->name('proveedores.store');
+Route::get('/proveedores/edit/{id}', [ProveedoresController::class, 'edit'])->name('proveedores.edit');
+Route::put('/proveedores/update/{id}', [ProveedoresController::class, 'update'])->name('proveedores.update');
 
 //Documentacion CRUD planes_emergencias
 Route::get('/planes_emergencias', [Planes_emergenciasController::class, 'index'])->name('planes.index');

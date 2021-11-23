@@ -96,7 +96,10 @@ class ProveedoresController extends Controller
      */
     public function edit($id)
     {
-        //
+        $proveedor=Proveedor::find($id);
+        return view('documentacion.proveedores.edit',[
+            'proveedor'=> $proveedor,
+        ]);
     }
 
     /**
@@ -108,7 +111,42 @@ class ProveedoresController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $proveedor=Proveedor::find($id);
+        $proveedor->id= $request->id;
+        $proveedor->nom_proveedor= $request->nom_proveedor;
+        $proveedor->arl_proveedor= $request->arl_proveedor;
+
+        if($request->hasFile("ruta_certARL")){
+            $file= $request->file("ruta_certARL");
+
+            $nombre="pdf_" . time() ."." .$file->guessExtension();
+
+            $ruta= public_path("certARL/".$nombre);
+            copy($file,$ruta);
+            $proveedor->ruta_certARL=$nombre;
+        }
+        if($request->hasFile("ruta_segSocial")){
+            $file= $request->file("ruta_segSocial");
+
+            $nombre="pdf_" . time() ."." .$file->guessExtension();
+
+            $ruta= public_path("segSocial/".$nombre);
+            copy($file,$ruta);
+            $proveedor->ruta_segSocial=$nombre;
+        }
+        if($request->hasFile("ruta_fichaSegu")){
+            $file= $request->file("ruta_fichaSegu");
+
+            $nombre="pdf_" . time() ."." .$file->guessExtension();
+
+            $ruta= public_path("fichaSegu/".$nombre);
+            copy($file,$ruta);
+            $proveedor->ruta_fichaSegu=$nombre;
+        }
+
+        $proveedor->save();
+        return redirect('/proveedores');
+        
     }
 
     /**

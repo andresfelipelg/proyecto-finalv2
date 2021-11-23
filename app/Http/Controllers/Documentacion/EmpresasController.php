@@ -11,6 +11,11 @@ use App\Models\Documentacion\Actividad_economica;
 
 class EmpresasController extends Controller
 {
+    public function __Construct(){
+        $this->middleware('auth');
+       
+    }
+    
     /**
      * Display a listing of the resource.
      *

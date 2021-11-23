@@ -9,6 +9,11 @@ use App\Models\Documentacion\Riesgo_psicosocial;
 
 class Riesgos_psicosocialesController extends Controller
 {
+    public function __Construct(){
+        $this->middleware('auth');
+       
+    }
+    
     /**
      * Display a listing of the resource.
      *

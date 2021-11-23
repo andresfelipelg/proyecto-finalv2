@@ -7,6 +7,7 @@ use Hash;
 use Session;
 use App\Models\User;
 use App\Models\Role;
+use App\Models\Status;
 use Illuminate\Support\Facades\Auth;
 
 class CustomRegisterController extends Controller
@@ -14,8 +15,10 @@ class CustomRegisterController extends Controller
     public function registration()
     {
         $roles=Role::get();
+        $status=Status::get();
         return view('usuarios.create',[
             'roles'=> $roles,
+            'status'=> $status,
         ]);
     }
       
@@ -45,7 +48,9 @@ class CustomRegisterController extends Controller
         'direccion' => $data['direccion'],
         'id_role' => $data['id_role'],
         'email' => $data['email'],
-        'password' => Hash::make($data['password'])
+        'password' => Hash::make($data['password']),
+        'status_id' => 1,
+
       ]);
     }
 }

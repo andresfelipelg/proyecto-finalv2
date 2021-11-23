@@ -9,6 +9,11 @@ use App\Models\Documentacion\Plan_emergencia;
 
 class Planes_emergenciasController extends Controller
 {
+    public function __Construct(){
+        $this->middleware('auth');
+       
+    }
+    
     /**
      * Display a listing of the resource.
      *

@@ -10,6 +10,11 @@ use App\Models\User;
 
 class CompromisosController extends Controller
 {
+      public function __Construct(){
+         $this->middleware('auth');
+        
+     }
+
     /**
      * Display a listing of the resource.
      *

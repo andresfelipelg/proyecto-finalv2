@@ -59,6 +59,18 @@
                   <div class="mb-3  text-start">
                     <input class="form-control" type="password"  name="password" placeholder="Password">
                   </div>
+
+                  <!--<div class="mb-3 mt-3 text-start">
+                    <select class="form-select" aria-label="Default select example" name="status_id" id="status_id">
+                        <option value="">Seleccione estado del usuario</option>
+                        @foreach($status as $statu)
+                          <option value="{{ $statu->id }}">{{ $statu->tipo }}</option>
+                        @endforeach
+                    </select>
+                    @if ($errors->has('rol_id'))
+                        <p class="text-danger">{{ $errors->first('rol_id') }}</p>
+                    @endif
+                  </div>-->
                 <div class="d-grid ">
                 <button class="mt-2 btn btn-dark" type="submit">Enviar</button> 
               

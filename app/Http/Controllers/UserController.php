@@ -47,8 +47,10 @@ class UserController extends Controller
     public function create()
     {
         $roles=Role::get();
+        
         return view('usuarios.create',[
-            'roles'=> $roles
+            'roles'=> $roles,
+            
         ]);
     }
 
@@ -70,6 +72,7 @@ class UserController extends Controller
         $usuario->email = $request->email;
         $usuario->id_role = $request->id_role;
         $usuario->password = $request->password;
+        
         $usuario->save();
 
         return redirect('/usuarios');

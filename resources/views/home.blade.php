@@ -32,5 +32,23 @@
          
 
     @endif
+
+    @if(auth()->user()->id_role==3)
+    <a href="{{ route('actas.index') }}" class="btn btn-secondary mt-3 mb-3">Actas <i class="bi bi-person-plus-fill"></i></a>
+           
+
+    @endif
+
+    @if(auth()->user()->id_role==4)
+    <a href="{{ route('actas.index') }}" class="btn btn-secondary mt-3 mb-3">Actas <i class="bi bi-person-plus-fill"></i></a>
+           
+
+    @endif
+
+    @if(auth()->user()->id_role==5)
+    <a href="{{ route('actas.index') }}" class="btn btn-secondary mt-3 mb-3">Actas <i class="bi bi-person-plus-fill"></i></a>
+           
+
+    @endif
 </div>
 @endsection

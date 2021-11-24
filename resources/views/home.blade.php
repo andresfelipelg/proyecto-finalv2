@@ -35,18 +35,21 @@
 
     @if(auth()->user()->id_role==3)
     <a href="{{ route('actas.index') }}" class="btn btn-secondary btn-lg mt-3 mb-3">Actas <i class="bi bi-person-plus-fill"></i></a>
+    <a href="{{ route('participantes.index') }}" class="btn btn-secondary btn-lg mt-3 mb-3">Participantes <i class="bi bi-person-plus-fill"></i></a>
            
 
     @endif
 
     @if(auth()->user()->id_role==4)
     <a href="{{ route('actas.index') }}" class="btn btn-secondary btn-lg mt-3 mb-3">Actas <i class="bi bi-person-plus-fill"></i></a>
+    <a href="{{ route('participantes.index') }}" class="btn btn-secondary btn-lg mt-3 mb-3">Participantes <i class="bi bi-person-plus-fill"></i></a>
            
 
     @endif
 
     @if(auth()->user()->id_role==5)
     <a href="{{ route('actas.index') }}" class="btn btn-secondary btn-lg mt-3 mb-3">Actas <i class="bi bi-person-plus-fill"></i></a>
+    <a href="{{ route('participantes.index') }}" class="btn btn-secondary btn-lg mt-3 mb-3">Participantes <i class="bi bi-person-plus-fill"></i></a>
            
 
     @endif

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Documentacion;
 
 use App\Http\Controllers\Controller;
-use App\Models\Politica;
+use App\Models\Documentacion\Politica;
 use Illuminate\Http\Request;
 
 class PoliticaController extends Controller
@@ -28,7 +28,7 @@ class PoliticaController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**

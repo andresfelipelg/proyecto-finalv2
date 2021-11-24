@@ -9,6 +9,7 @@ use App\Models\User;
 use App\Models\Role;
 use App\Models\Status;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash as FacadesHash;
 
 class CustomRegisterController extends Controller
 {
@@ -48,7 +49,7 @@ class CustomRegisterController extends Controller
         'direccion' => $data['direccion'],
         'id_role' => $data['id_role'],
         'email' => $data['email'],
-        'password' => Hash::make($data['password']),
+        'password' => FacadesHash::make($data['password']),
         'status_id' => 1,
 
       ]);

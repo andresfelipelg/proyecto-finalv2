@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Documentacion;
 
-use App\Models\Documentacion\Empresa;
+
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 

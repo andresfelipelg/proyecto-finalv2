@@ -12,7 +12,7 @@ use App\Http\Controllers\Documentacion\CompromisosController;
 use App\Http\Controllers\Comites\ActasController;
 use App\Http\Controllers\Comites\ParticipantesController;
 use App\Http\Controllers\Documentacion\PoliticaController;
-//use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -90,11 +90,11 @@ Route::put('/compromisos/update/{id}', [CompromisosController::class, 'update'])
 
 // Documentacion CRUD Politicas
 
-Route::get('/politicas',[PoliticaController::class,'index'])->name('potlitcas.index');
-Route::get('/politicas/create',[PoliticaController::class,'create'])->name('potlitcas.create');
-Route::post('/politicas/store',[PoliticaController::class,'store'])->name('potlitcas.store');
-Route::get('/politicas/edit/{id}',[PoliticaController::class,'edit'])->name('potlitcas.edit');
-Route::put('/politicas/update/{id}',[PoliticaController::class,'update'])->name('potlitcas.update');
+Route::get('/politicas',[PoliticaController::class,'index'])->name('politicas.index');
+Route::get('/politicas/create',[PoliticaController::class,'create'])->name('politicas.create');
+Route::post('/politicas/store',[PoliticaController::class,'store'])->name('politicas.store');
+Route::get('/politicas/edit/{id}',[PoliticaController::class,'edit'])->name('politicas.edit');
+Route::put('/politicas/update/{id}',[PoliticaController::class,'update'])->name('politicas.update');
 
 
 

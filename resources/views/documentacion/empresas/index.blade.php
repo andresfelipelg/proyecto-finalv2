@@ -8,6 +8,11 @@
 @endsection
 
 @section('contenido')
+ @if (session()->has('msn'))
+        <div class="alert alert-danger">
+            {{ session()->get('msn') }}
+        </div>
+    @endif
 
 
 
@@ -46,12 +51,13 @@
                 
                 
                 <td>
-                <form action="" method="post">
+                <a href="{{ route('empresas.edit', $empresa->id) }}" class="btn btn-secondary">Editar</a>
+                <form action="{{route('empresas.delete',$empresa->id)}}" method="post">
                     @csrf
                     @method('DELETE')
-                       <a href="{{ route('empresas.edit', $empresa->id) }}" class="btn btn-secondary">Editar</a>
-                       <a href="" class="btn btn-danger">Borrar</a>
-                   <!--<button href=""class="btn btn-dark" type="submit" >Borrar</button>-->
+                       
+                       
+                     <button href=""class="btn btn-dark" type="submit" >Borrar</button>
                </form>
                </td>
             </tr>

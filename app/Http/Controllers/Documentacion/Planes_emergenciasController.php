@@ -79,7 +79,10 @@ class Planes_emergenciasController extends Controller
      */
     public function edit($id)
     {
-        //
+        $plan=Plan_emergencia::find($id);
+        return view('documentacion.planes_emergencias.edit',[
+            'plan'=> $plan,
+        ]);
     }
 
     /**
@@ -91,7 +94,19 @@ class Planes_emergenciasController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $plan=Plan_emergencia::find($id);
+        if($request->hasFile("ruta_planEmergencia")){
+            $file= $request->file("ruta_planEmergencia");
+
+            $nombre="pdf_" . time() ."." .$file->guessExtension();
+
+            $ruta= public_path("planEmergencia/".$nombre);
+            copy($file,$ruta);
+            $plan->ruta_planEmergencia=$nombre;
+        }
+        $plan->save();
+        return redirect('/planes_emergencias');
+        
     }
 
     /**
@@ -102,6 +117,8 @@ class Planes_emergenciasController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $plan=Plan_emergencia::find($id);
+        $plan->delete();
+        return redirect('/planes_emergencias')->with('msn', 'registros eliminado con exito');
     }
 }

@@ -201,6 +201,8 @@ class EncargadosController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $encargado=Encargado::find($id);
+        $encargado->delete();
+        return redirect('/encargados')->with('msn', 'registros eliminados con exito');
     }
 }

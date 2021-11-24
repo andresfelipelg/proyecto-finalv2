@@ -162,6 +162,8 @@ class ProveedoresController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $proveedor=Proveedor::find($id);
+        $proveedor->delete();
+        return redirect('/proveedores')->with('msn', 'registros eliminado con exito');
     }
 }

@@ -64,12 +64,13 @@
                 
                 
                 <td>
-                <form action="" method="post">
+                <a href="{{route('encargados.edit', $encargado->id)}}" class="btn btn-secondary">Editar</a>
+                <form action="{{route('encargados.delete', $encargado->id)}}" method="post">
                     @csrf
                     @method('DELETE')
-                       <a href="{{route('encargados.edit', $encargado->id)}}" class="btn btn-secondary">Editar</a>
-                       <a href="" class="btn btn-danger">Borrar</a>
-                   <!--<button href=""class="btn btn-dark" type="submit" >Borrar</button>-->
+                       
+                       
+                     <button href=""class="btn btn-dark" type="submit" >Borrar</button>
                </form>
                </td>
             </tr>

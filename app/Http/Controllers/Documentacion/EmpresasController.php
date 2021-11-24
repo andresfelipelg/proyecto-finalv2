@@ -119,6 +119,8 @@ class EmpresasController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $empresa=Empresa::find($id);
+         $empresa->delete();
+         return redirect('/empresas')->with('msn', 'registros eliminado con exito');
     }
 }

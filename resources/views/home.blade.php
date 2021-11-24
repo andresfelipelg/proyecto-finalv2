@@ -29,6 +29,7 @@
     <a href="{{ route('proveedores.index') }}" class="btn btn-secondary btn-lg mt-3 mb-3">Proveedores <i class="bi bi-person-plus-fill"></i></a>
     <a href="{{ route('riesgos.index') }}" class="btn btn-secondary btn-lg mt-3 mb-3">Riesgos psicosociales <i class="bi bi-person-plus-fill"></i></a>
     <a href="{{ route('planes.index') }}" class="btn btn-secondary btn-lg mt-3 mb-3">Plan de emergencia <i class="bi bi-person-plus-fill"></i></a>
+    <a href="{{ route('politicas.index') }}" class="btn btn-secondary btn-lg mt-3 mb-3">Politicas <i class="bi bi-person-plus-fill"></i></a>
          
 
     @endif

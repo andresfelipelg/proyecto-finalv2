@@ -15,7 +15,7 @@
              <div class="col-5 pt-5 m-auto ">
               <div class="text-center mt-5 ">
                   <i class=" display-1 bi bi-file-text-fill "></i>
-                  <h1 class= "mt-3 h2 font-weight-normal text-white" >Registro Usuario</h1>
+                  <h1 class= "mt-3 h2 font-weight-normal text-white" >Nueva Politica</h1>
 
                   <div class="mb-3 mt-3 text-start">
                     <select class="form-select" aria-label="Default select example" name="empresa_id" id="empresa_id">

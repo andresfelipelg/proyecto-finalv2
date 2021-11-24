@@ -11,7 +11,7 @@
 
 
 
-    <a href="{{ route('politicas.create') }}" class="btn btn-secondary mt-3 mb-3"> Nuevo encargado <i class="bi bi-person-plus-fill"></i></a>
+    <a href="{{ route('politicas.create') }}" class="btn btn-secondary mt-3 mb-3"> ingresar politica <i class="bi bi-person-plus-fill"></i></a>
 
     <table class="table  table-striped table-hover mt-5 table-bordered shadow-lg" id="usuarios">
         <thead class="table-encabezado text-dark">

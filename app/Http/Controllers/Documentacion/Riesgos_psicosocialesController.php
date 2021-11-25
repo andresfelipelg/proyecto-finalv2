@@ -56,6 +56,7 @@ class Riesgos_psicosocialesController extends Controller
             $riesgo->ruta_docLegal=$nombre;
         }
         $riesgo->save();
+        return redirect('/riesgos_psicosociales');
 
     }
 
@@ -78,7 +79,10 @@ class Riesgos_psicosocialesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $riesgo=Riesgo_psicosocial::find($id);
+        return view('documentacion.riesgos_psicosociales.edit',[
+            'riesgo'=> $riesgo,
+        ]);
     }
 
     /**
@@ -90,7 +94,19 @@ class Riesgos_psicosocialesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $riesgo=Riesgo_psicosocial::find($id);
+        if($request->hasFile("ruta_docLegal")){
+            $file= $request->file("ruta_docLegal");
+
+            $nombre="pdf_" . time() ."." .$file->guessExtension();
+
+            $ruta= public_path("riesgosPsicos/".$nombre);
+            copy($file,$ruta);
+            $riesgo->ruta_docLegal=$nombre;
+        }
+        $riesgo->save();
+        return redirect('/riesgos_psicosociales');
+        
     }
 
     /**
@@ -101,6 +117,9 @@ class Riesgos_psicosocialesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $riesgo=Riesgo_psicosocial::find($id);
+        $riesgo->delete();
+        return redirect('/riesgos_psicosociales')->with('msn', 'registros eliminado con exito');
+
     }
 }

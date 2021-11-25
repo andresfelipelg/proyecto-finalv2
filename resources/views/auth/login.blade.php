@@ -17,7 +17,7 @@
  <form  method= "POST" action="{{ route('login') }}">
      @csrf
      <section class="form-login">
-        <h5>Formulario Login</h5>
+        <h5>Sistema SG-SST Login</h5>
         
 
         <input class="controls" type="email" name="email" value="" placeholder="correo">

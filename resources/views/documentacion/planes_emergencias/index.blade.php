@@ -8,10 +8,14 @@
 @endsection
 
 @section('contenido')
+ @if (session()->has('msn'))
+        <div class="alert alert-danger">
+            {{ session()->get('msn') }}
+        </div>
+    @endif
 
 
-
-    <a href="{{ route('proveedores.create') }}" class="btn btn-secondary mt-3 mb-3"> ingresar plan de emergencia <i class="bi bi-person-plus-fill"></i></a>
+    <a href="{{ route('planes.create') }}" class="btn btn-secondary mt-3 mb-3"> ingresar plan de emergencia <i class="bi bi-person-plus-fill"></i></a>
 
     <table class="table  table-striped table-hover mt-5 table-bordered shadow-lg" id="usuarios">
         <thead class="table-encabezado text-dark">
@@ -40,12 +44,13 @@
                 
                 
                 <td>
-                <form action="" method="post">
+                <a href="{{route('planes.edit',$plan->id)}}" class="btn btn-secondary">Editar</a>
+                <form action="{{route('planes.delete',$plan->id)}}" method="post">
                     @csrf
                     @method('DELETE')
-                       <a href="" class="btn btn-secondary">Editar</a>
-                       <a href="" class="btn btn-danger">Borrar</a>
-                   <!--<button href=""class="btn btn-dark" type="submit" >Borrar</button>-->
+                       
+                       
+                     <button href=""class="btn btn-dark" type="submit" >Borrar</button>
                </form>
                </td>
             </tr>

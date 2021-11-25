@@ -210,6 +210,8 @@ class PoliticaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $politica=Politica::find($id);
+        $politica->delete();
+        return redirect('/politicas')->with('msn', 'registros eliminados con exito');
     }
 }

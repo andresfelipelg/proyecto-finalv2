@@ -53,6 +53,7 @@ Route::get('/encargados/create', [EncargadosController::class, 'create'])->name(
 Route::post('/encargados/store', [EncargadosController::class, 'store'])->name('encargados.store');
 Route::get('/encargados/edit/{id}', [EncargadosController::class, 'edit'])->name('encargados.edit');
 Route::put('/encargados/update/{id}', [EncargadosController::class, 'update'])->name('encargados.update');
+Route::delete('/encargados/delete/{id}', [EncargadosController::class, 'destroy'])->name('encargados.delete');
 
 //Dcumentacion CRUD empresas
 
@@ -61,6 +62,7 @@ Route::get('/empresas/create', [EmpresasController::class, 'create'])->name('emp
 Route::post('/empresas/store', [EmpresasController::class, 'store'])->name('empresas.store');
 Route::get('/empresas/edit/{id}', [EmpresasController::class, 'edit'])->name('empresas.edit');
 Route::put('/empresas/update/{id}', [EmpresasController::class, 'update'])->name('empresas.update');
+Route::delete('/empresas/delete/{id}', [EmpresasController::class, 'destroy'])->name('empresas.delete');
 
 //Documentacion CRUD proveedores
 
@@ -69,16 +71,23 @@ Route::get('/proveedores/create', [ProveedoresController::class, 'create'])->nam
 Route::post('/proveedores/store', [ProveedoresController::class, 'store'])->name('proveedores.store');
 Route::get('/proveedores/edit/{id}', [ProveedoresController::class, 'edit'])->name('proveedores.edit');
 Route::put('/proveedores/update/{id}', [ProveedoresController::class, 'update'])->name('proveedores.update');
+Route::delete('/proveedores/delete/{id}', [ProveedoresController::class, 'destroy'])->name('proveedores.delete');
 
 //Documentacion CRUD planes_emergencias
 Route::get('/planes_emergencias', [Planes_emergenciasController::class, 'index'])->name('planes.index');
 Route::get('/planes_emergencias/create', [Planes_emergenciasController::class, 'create'])->name('planes.create');
 Route::post('/planes_emergencias/store', [Planes_emergenciasController::class, 'store'])->name('planes.store');
+Route::get('/planes_emergencias/edit/{id}', [Planes_emergenciasController::class, 'edit'])->name('planes.edit');
+Route::put('/planes_emergencias/update/{id}', [Planes_emergenciasController::class, 'update'])->name('planes.update');
+Route::delete('/planes_emergencias/delete/{id}', [Planes_emergenciasController::class, 'destroy'])->name('planes.delete');
 
 //Documentacion CRUD riesgos_psicosociales
 Route::get('/riesgos_psicosociales', [Riesgos_psicosocialesController::class, 'index'])->name('riesgos.index');
 Route::get('/riesgos_psicosociales/create', [Riesgos_psicosocialesController::class, 'create'])->name('riesgos.create');
 Route::post('/riesgos_psicosociales/store', [Riesgos_psicosocialesController::class, 'store'])->name('riesgos.store');
+Route::get('/riesgos_psicosociales/edit/{id}', [Riesgos_psicosocialesController::class, 'edit'])->name('riesgos.edit');
+Route::put('/riesgos_psicosociales/update/{id}', [Riesgos_psicosocialesController::class, 'update'])->name('riesgos.update');
+Route::delete('/riesgos_psicosociales/destroy/{id}', [Riesgos_psicosocialesController::class, 'destroy'])->name('riesgos.delete');
 
 //Documentacion CRUD compromisos
 
@@ -87,6 +96,7 @@ Route::get('/compromisos/create', [CompromisosController::class, 'create'])->nam
 Route::post('/compromisos/store', [CompromisosController::class, 'store'])->name('compromisos.store');
 Route::get('/compromisos/edit/{id}', [CompromisosController::class, 'edit'])->name('compromisos.edit');
 Route::put('/compromisos/update/{id}', [CompromisosController::class, 'update'])->name('compromisos.update');
+Route::delete('/compromisos/delete/{id}', [CompromisosController::class, 'destroy'])->name('compromisos.delete');
 
 // Documentacion CRUD Politicas
 
@@ -95,6 +105,7 @@ Route::get('/politicas/create',[PoliticaController::class,'create'])->name('poli
 Route::post('/politicas/store',[PoliticaController::class,'store'])->name('politicas.store');
 Route::get('/politicas/edit/{id}',[PoliticaController::class,'edit'])->name('politicas.edit');
 Route::put('/politicas/update/{id}',[PoliticaController::class,'update'])->name('politicas.update');
+Route::delete('/politicas/delete/{id}',[PoliticaController::class,'destroy'])->name('politicas.delete');
 
 
 
@@ -105,6 +116,9 @@ Route::get('/actas/create', [ActasController::class, 'create'])->name('actas.cre
 Route::post('/actas/store', [ActasController::class, 'store'])->name('actas.store');
 Route::get('/actas/edit/{id}', [ActasController::class, 'edit'])->name('actas.edit');
 Route::put('/actas/update/{id}', [ActasController::class, 'update'])->name('actas.update');
+Route::get('/actas/show/{id}', [ActasController::class, 'show'])->name('actas.show');
+Route::delete('/actas/delete/{id}', [ActasController::class, 'destroy'])->name('actas.delete');
+
 
 
 //Comites CRUD Participantes
@@ -113,6 +127,7 @@ Route::get('/participantes/create', [ParticipantesController::class, 'create'])-
 Route::post('/participantes/store', [ParticipantesController::class, 'store'])->name('participantes.store');
 Route::get('/participantes/edit/{id}', [ParticipantesController::class, 'edit'])->name('participantes.edit');
 Route::put('/participantes/update/{id}', [ParticipantesController::class, 'update'])->name('participantes.update');
+Route::delete('/participantes/delete/{id}', [ParticipantesController::class, 'destroy'])->name('participantes.delete');
 
 Auth::routes(['register'=> false]);
 

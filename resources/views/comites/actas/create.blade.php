@@ -59,6 +59,10 @@
                     <p class="text-danger">{{ $errors->first('apellido') }}</p>
                 @endif 
                 </div>
+
+                <div class="mb-3 mt-3 text-start">
+                    <textarea name="acta_votacion" id="" cols="55" rows="30" placeholder="Acta de votacion: Desarrollo de la reunión"></textarea>
+                </div>
                   
                   
                     

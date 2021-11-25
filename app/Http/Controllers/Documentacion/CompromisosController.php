@@ -138,6 +138,8 @@ class CompromisosController extends Controller
      */
     public function destroy($id)
     {
-        //
+         $compromiso=Compromiso::find($id);
+         $compromiso->delete();
+         return redirect('/compromisos')->with('msn', 'registros eliminado con exito');
     }
 }

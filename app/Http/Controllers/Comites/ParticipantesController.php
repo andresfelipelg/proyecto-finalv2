@@ -147,6 +147,8 @@ class ParticipantesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $participante=Participante::find($id);
+        $participante->delete();
+        return redirect('/participantes')->with('msn', 'registros eliminados con exito');
     }
 }

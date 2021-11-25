@@ -57,6 +57,7 @@ class ActasController extends Controller
         $acta->fecha_acta= $request->fecha_acta;
         $acta->hora_inicio= $request->hora_inicio;
         $acta->hora_fin= $request->hora_fin;
+        $acta->acta_votacion= $request->acta_votacion;
 
         $acta->save();
         return redirect('/actas');
@@ -71,7 +72,10 @@ class ActasController extends Controller
      */
     public function show($id)
     {
-        //
+        $acta=Acta::find($id);
+        return view('comites.actas.show',[
+            'acta'=> $acta,
+        ]);
     }
 
     /**
@@ -113,6 +117,9 @@ class ActasController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $acta=Acta::find($id);
+        $acta->delete();
+        return redirect('/actas')->with('msn', 'registros eliminados con exito');
+
     }
 }

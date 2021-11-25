@@ -60,6 +60,10 @@
                     <p class="text-danger">{{ $errors->first('apellido') }}</p>
                 @endif 
                 </div>
+
+                <div class="mb-3 mt-3 text-start">
+                    <textarea name="acta_votacion" id="" cols="55" rows="30" >{{$acta->acta_votacion}}</textarea>
+                </div>
                  
 
                  

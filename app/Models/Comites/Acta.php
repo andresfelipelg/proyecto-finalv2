@@ -18,7 +18,8 @@ class Acta extends Model
         'lugar_acta',
         'fecha_acta',
         'hora_inicio',
-        'hora_fin',                    
+        'hora_fin',
+        'acta_votacion',                    
         'created_at',
         'updated_at',
     ];

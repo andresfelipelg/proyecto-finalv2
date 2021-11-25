@@ -116,6 +116,9 @@ Route::get('/actas/create', [ActasController::class, 'create'])->name('actas.cre
 Route::post('/actas/store', [ActasController::class, 'store'])->name('actas.store');
 Route::get('/actas/edit/{id}', [ActasController::class, 'edit'])->name('actas.edit');
 Route::put('/actas/update/{id}', [ActasController::class, 'update'])->name('actas.update');
+Route::get('/actas/show/{id}', [ActasController::class, 'show'])->name('actas.show');
+Route::delete('/actas/delete/{id}', [ActasController::class, 'destroy'])->name('actas.delete');
+
 
 
 //Comites CRUD Participantes
@@ -124,6 +127,7 @@ Route::get('/participantes/create', [ParticipantesController::class, 'create'])-
 Route::post('/participantes/store', [ParticipantesController::class, 'store'])->name('participantes.store');
 Route::get('/participantes/edit/{id}', [ParticipantesController::class, 'edit'])->name('participantes.edit');
 Route::put('/participantes/update/{id}', [ParticipantesController::class, 'update'])->name('participantes.update');
+Route::delete('/participantes/delete/{id}', [ParticipantesController::class, 'destroy'])->name('participantes.delete');
 
 Auth::routes(['register'=> false]);
 

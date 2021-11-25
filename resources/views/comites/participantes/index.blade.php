@@ -9,6 +9,12 @@
 
 @section('contenido')
 
+ @if (session()->has('msn'))
+        <div class="alert alert-danger">
+            {{ session()->get('msn') }}
+        </div>
+    @endif
+
 
 
     <a href="{{ route('participantes.create') }}" class="btn btn-secondary mt-3 mb-3"> ingresar participante <i class="bi bi-person-plus-fill"></i></a>
@@ -51,12 +57,13 @@
                 
                 
                 <td>
-                <form action="" method="post">
+                <a href="{{route('participantes.edit', $participante->id)}}" class="btn btn-secondary">Editar</a>
+
+                <form action="{{route('participantes.delete', $participante->id)}}" method="post">
                     @csrf
                     @method('DELETE')
-                       <a href="{{route('participantes.edit', $participante->id)}}" class="btn btn-secondary">Editar</a>
-                       <a href="" class="btn btn-danger">Borrar</a>
-                   <!--<button href=""class="btn btn-dark" type="submit" >Borrar</button>-->
+                       
+                   <button class="btn btn-dark" type="submit" >Borrar</button>
                </form>
                </td>
             </tr>
